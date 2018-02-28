@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>vinWeather</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class = "home" >
+  <ion-grid *ngIf="weather">
+  
+          
+      
+      <ion-row class="home1">
+          <ion-col width-100 >
+            <div>
+              <h1>{{weather.name}}</h1>
+            </div>
+              <div>
+                    <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png" alt="" style="width:100px;height:100px;">
+                  
+              </div> 
+          
+                  <div><h1>{{weather.main.temp}}&deg;C</h1></div>
+                
+            </ion-col>
+      </ion-row>
+
+
+     <div class="list">
+        <ion-row >
+            <ion-col width-100>
+              <ion-list>
+                <ion-item>
+                    <strong>weather:</strong>{{weather.weather[0].description}}
+                </ion-item>
+                <ion-item>
+                    <strong>humidity:</strong>{{weather.main.humidity}}
+                </ion-item>
+                <ion-item>
+                    <strong>wind speed:</strong>{{weather.wind.speed}}
+                </ion-item>
+              </ion-list>
+                
+              </ion-col>
+        </ion-row>
+
+     </div>
+  
+     
+      
+
+  </ion-grid>
+    
+</ion-content>
